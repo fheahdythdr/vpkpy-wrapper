@@ -2,10 +2,12 @@ const { exec } = require('child_process');
 const { basename, parse, dirname, join } = require('path');
 const fs = require('fs');
 
+const vpk = __dirname + '/vpk.exe'
+
 const vpkpy = {}
 
 vpkpy.exec = function(str, cb) {
-    return exec('vpk ' + str, cb);
+    return exec(vpk + ' ' + str, cb);
 };
 
 vpkpy.create = function(file, opts) {
